@@ -1,0 +1,14 @@
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.deps.json
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.AssemblyInfo.cs
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Core\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Core.csproj.CopyComplete

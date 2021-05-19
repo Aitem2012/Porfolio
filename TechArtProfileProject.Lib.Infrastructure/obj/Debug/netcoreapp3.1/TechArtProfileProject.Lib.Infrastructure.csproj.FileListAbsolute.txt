@@ -1,0 +1,12 @@
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.deps.json
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.csprojAssemblyReference.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.AssemblyInfo.cs
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.csproj.CopyComplete
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Infrastructure\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Infrastructure.pdb

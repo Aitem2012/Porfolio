@@ -1,0 +1,36 @@
+[
+
+  {
+    "Id": "9e0444fb-e663-4b8a-88eb-1c9e256a0f48",
+    "UserId" :  1,
+    "firstName": "Ibrahim",
+    "lastName": "Temitope",
+    "image": "images/aitem.jpg",
+    "email": "ajumokoibrahimtemitope@gmail.com",
+    "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "jobTitle": "Software Developer"
+  },
+
+  {
+    "Id": "2438b126-7410-43dc-84f8-f5e6c5c71289",
+    "UserId" : 2 ,
+    "firstName": "Uche",
+    "lastName": "Eugene",
+    "image": "images/LinkedIn-Profile-1.jpg",
+    "email": "ucheeugene@gmail.com",
+    "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "jobTitle": "Software Developer"
+  },
+
+  {
+    "Id": "77fe5873-b45c-482e-89f3-decad6c4ed3d",
+    "UserId": 3,
+    "firstName": "Solomon",
+    "lastName": "Young",
+    "image": "images/image2.jpg",
+    "email": "solomon_young@gmail.com",
+    "biography": "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+    "jobTitle": "Software Developer"
+  }
+
+]

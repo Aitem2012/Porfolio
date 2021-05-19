@@ -1,0 +1,72 @@
+﻿@model UserProfileViewModel
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<div class="jumbotron bg-white text-center font-weight-bolder text-50 text-primary"><h4>Edit Profile</h4></div>
+<div class="jumbotron">
+    <div class="row d-flex justify-content-center">
+
+        <div class=" col-4 text-center mr-4">
+
+            <div class="card border-0 col-12 m-2 box-shadow p-4 ">
+
+                <a href="#"><img class="card-img-top rounded" asp-append-version="true" src="~/@Model.Image" alt="image" /></a>
+                <div class="card-body text-center ">
+                    <h6 class="text-secondary ">
+                        @Model.FirstName @Model.LastName
+                    </h6>
+                    <h6 class="text-secondary">
+                        @Model.JobTitle
+                    </h6>
+                </div>
+                <input type="file" value="Upload a new profile picture" />
+            </div>
+        </div>
+
+        <div class="col-7">
+            <form method="post" class="row form-group justify-content-center col-12 border-2">
+                <div class="row col-12">
+                    <label for="jobtitle" class="col-12"> Job Title</label>
+                    <input type="text" name="JobTitle" class="col-12" asp-for="JobTitle" value="@Model.JobTitle" />
+                </div>
+                <div class="row col-12">
+                    <label for="firstname" class="col-12"> First Name</label>
+                    <input type="text" name="Firstname" class="col-12" asp-for="FirstName" value="@Model.FirstName" />
+                </div>
+
+                <div class="row col-12">
+                    <label for="lastname" class="col-12"> Last Name</label>
+                    <input type="text" class="col-12" name="Lastname" asp-for="LastName" value="@Model.LastName" />
+                </div>
+                <div class="row col-12">
+                    <label for="biography"> Biography</label>
+                    <textarea class="rounded w-200 form-control" rows="3" type="text" name="Biography" asp-for="Biography">
+                         @Model.Biography
+                    </textarea>
+                </div>
+                <div class="row col-12">
+                    <input type="hidden" asp-for="Image" name="Image" value="@Model.Image" />
+                </div>
+                <div class="row col-12">
+                    <input type="hidden" asp-for="UserProfileId" name="UserProfileId" value="@Model.UserProfileId" />
+                </div>
+                <div class="row col-12">
+                    <input type="hidden" asp-for="Email" name="Email" value="@Model.Email" />
+                </div>
+                <div class="row col-12">
+                    <input type="hidden" asp-for="UserId" name="UserId" value="@Model.UserId" />
+                </div>
+
+                <div class="form-group">
+                    @*<input asp-action="Index"  type="submit" asp-route="@Model.UserProfile.UserProfileId" class="btn btn-outline-primary" name="updateProfile" value="Update profile" />*@
+                    <input type="submit" class="btn btn-outline-primary" asp-route="@Model.UserId" name="updateprofile" value="Update Profile" />
+                </div>
+            </form>
+        </div>
+
+    </div>
+</div>
+<div>
+    <a asp-action="Index" asp-route-id="@Model.UserProfileId">Back to Dashboard</a>
+</div>

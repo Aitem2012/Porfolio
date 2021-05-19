@@ -1,0 +1,31 @@
+﻿@model AllUserProfileViewModel
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center font-weight-bold">
+    Portfolio
+</div>
+
+<div class="container">
+    <div class="d-flex justify-content-center pt-2">
+        @foreach (var profile in Model.Profiles)
+        {
+
+            <div class="card border-0 w-50 m-2 col-4 box-shadow p-4 ">
+
+                <a href="#"><img class="card-img-top" asp-append-version="true" src="@profile.Image" alt="image" /></a>
+                <div class="card-body text-center ">
+                    <h6 class="text-uppercase text-primary">
+                        @profile.FirstName @profile.LastName
+                    </h6>
+                    <p class="text-muted card-text" style=" font-size:small">
+                       Hello, my name is @profile.FirstName @profile.LastName and I am fun to be with
+                    </p>
+                    <a class="btn btn-outline-primary w-75" asp-controller="Dashboard" asp-action="Index" id="" asp-route-id="@profile.UserId">See More</a>
+                </div>
+
+            </div>
+          }
+    </div>
+</div>

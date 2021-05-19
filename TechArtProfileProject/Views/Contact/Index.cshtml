@@ -1,0 +1,33 @@
+﻿@model ContactViewModel
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="jumbotron bg-white text-center font-weight-bolder text-50 text-primary"><h4>Contact Me</h4></div>
+
+<div class="card col-6 mx-auto p-5">
+    <form method="post" class="row form-group justify-content-center col-12 border-2">
+        <div asp-validation-summary="All" class="text-danger"></div>
+
+        <div class="row col-12 form-group">
+            <input type="text" name="SenderName" class="col-12" asp-for="SenderName" value="" placeholder="Your Name" />
+            <span asp-validation-for="SenderName" class="text-danger"></span>
+        </div>
+        <div class="row col-12 form-group">
+            <input type="text" name="SenderEmail" class="col-12" asp-for="SenderEmail" value="" placeholder="Your Email" />
+            <span asp-validation-for="SenderEmail" class="text-danger"></span>
+        </div>
+
+        <div class="row col-12 form-group">
+
+            <textarea class="rounded w-200 form-control" rows="3" type="text" name="SenderMessage" asp-for="SenderMessage" placeholder="Your Message">
+                        
+            </textarea>
+            <span class="text-danger" asp-validation-for="SenderMessage"></span>
+        </div>
+        <div class="form-group">
+            @*<input asp-action="Index"  type="submit" asp-route="@Model.UserProfile.UserProfileId" class="btn btn-outline-primary" name="updateProfile" value="Update profile" />*@
+            <input type="submit" class="btn btn-outline-primary" name="updateservice" value="Submit" />
+        </div>
+    </form>
+</div>

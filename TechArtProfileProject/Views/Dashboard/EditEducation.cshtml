@@ -1,0 +1,54 @@
+﻿@model EducationViewModel
+@{
+    ViewData["Title"] = "EditEducation";
+}
+
+
+<div class="jumbotron bg-white text-center font-weight-bolder text-50 text-primary"><h4>Edit Education</h4></div>
+
+
+<div class="card col-12 mx-auto">
+    <form method="post" class="row form-group justify-content-center col-12 border-2">
+        <div class="row col-12">
+            <label asp-for="SchoolName" class="col-12"> School Name</label>
+            <input type="text" name="SchoolName" class="col-12" asp-for="SchoolName" value="@Model.SchoolName" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="UserProfileId" class="col-12" asp-for="UserProfileId" value="@Model.UserProfileId" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="EducationId" class="col-12" asp-for="EducationId" value="@Model.EducationId" />
+        </div>
+
+        <div class="row col-12">
+            <label asp-for="DegreeObtained"> Degree Obtained</label>
+            <input class="rounded w-200 form-control" rows="3" type="text" name="DegreeObtained" asp-for="DegreeObtained" value="@Model.DegreeObtained" />
+
+        </div>
+
+        <div class="row col-12">
+            <label asp-for="Discipline"> Discipline</label>
+            <input class="rounded w-200 form-control" rows="3" type="text" name="Discipline" asp-for="Discipline" value="@Model.Discipline" />
+
+        </div>
+
+        <div class="row col-12">
+            <label asp-for="StartDate"> Start Date</label>
+            <input type="date" name="StartDate" class="col-12" asp-for="StartDate" value="@Model.StartDate" />
+        </div>
+        <div class="row col-12">
+            <label asp-for="GraduationDate"> Graduation Date</label>
+            <input type="date" name="GraduationDate" class="col-12" asp-for="GraduationDate" value="@Model.GraduationDate" />
+        </div>
+
+        <div class="form-group">
+            @*<input asp-action="Index"  type="submit" asp-route="@Model.UserProfile.UserProfileId" class="btn btn-outline-primary" name="updateProfile" value="Update profile" />*@
+            <input type="submit" class="btn btn-outline-primary" asp-route="@Model.EducationId" name="updateservice" value="Update Service" />
+        </div>
+    </form>
+</div>
+
+
+<div>
+    <a asp-action="Index" asp-route-id="@Model.UserProfileId">Back to Dashboard</a>
+</div>

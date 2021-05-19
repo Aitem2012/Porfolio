@@ -1,0 +1,9 @@
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.deps.json
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\bin\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.AssemblyInfoInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.AssemblyInfo.cs
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.csproj.CoreCompileInputs.cache
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.pdb
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject.Lib.Model\obj\Debug\netcoreapp3.1\TechArtProfileProject.Lib.Model.csprojAssemblyReference.cache

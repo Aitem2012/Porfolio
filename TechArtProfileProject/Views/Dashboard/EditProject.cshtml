@@ -1,0 +1,43 @@
+﻿@model EditProjectViewModel
+@{
+    ViewData["Title"] = "EditProject";
+}
+
+
+<div class="jumbotron bg-white text-center font-weight-bolder text-50 text-primary"><h4>Edit Project</h4></div>
+
+
+<div class="card col-12 mx-auto">
+    <form method="post" class="row form-group justify-content-center col-12 border-2">
+        <div class="row col-12">
+            <label asp-for="ProjectName" class="col-12"> Project Name</label>
+            <input type="text" name="ProjectName" class="col-12" asp-for="ProjectName" value="@Model.ProjectName" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="UserProfileId" class="col-12" asp-for="UserProfileId" value="@Model.UserProfileId" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="ProjectId" class="col-12" asp-for="ProjectId" value="@Model.ProjectId" />
+        </div>
+
+        <div class="row col-12">
+            <label asp-for="ProjectDescription"> Project Description</label>
+            <textarea class="rounded w-200 form-control" rows="3" type="text" name="ProjectDescription" asp-for="ProjectDescription">
+                         @Model.ProjectDescription
+            </textarea>
+        </div>
+        <div class="row col-12">
+            <label asp-for="ProjectLink"> Project Description</label>
+            <input type="text" name="ProjectLink" class="col-12" asp-for="ProjectLink" value="@Model.ProjectLink" />
+        </div>
+
+        <div class="form-group">
+            @*<input asp-action="Index"  type="submit" asp-route="@Model.UserProfile.UserProfileId" class="btn btn-outline-primary" name="updateProfile" value="Update profile" />*@
+            <input type="submit" class="btn btn-outline-primary" asp-route="@Model.ProjectId" name="updateservice" value="Update Service" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@Model.UserProfileId">Back to Dashboard</a>
+</div>
