@@ -1,5 +1,6 @@
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
+using Microsoft.AspNetCore.Identity;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.Extensions.Configuration;
 using Microsoft.Extensions.DependencyInjection;
@@ -13,6 +14,7 @@ using TechArtProfileProject.Lib.Core.Services;
 using TechArtProfileProject.Lib.Infrastructure;
 using TechArtProfileProject.Lib.Infrastructure.Abstraction;
 using TechArtProfileProject.Lib.Infrastructure.Implementations;
+using TechArtProfileProject.Models;
 using TechArtProfileProject.Models.Services;
 
 namespace TechArtProfileProject
@@ -41,6 +43,15 @@ namespace TechArtProfileProject
             services.AddScoped<IUserServicesService, UserServicesService>();
             services.AddScoped<IContactRepository, ContactRepository>();
             services.AddScoped<IContactService, ContactService>();
+            services.AddIdentity<UserProfile, IdentityRole>(cfg =>
+            {
+                cfg.User.RequireUniqueEmail = true;
+                cfg.Password.RequireNonAlphanumeric = true;
+                cfg.Password.RequiredLength = 8;
+                
+                
+            }
+                ).AddEntityFrameworkStores<UserProfileDbContext>();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
@@ -57,6 +68,8 @@ namespace TechArtProfileProject
             app.UseStaticFiles();
 
             app.UseRouting();
+
+            app.UseAuthentication();
 
             app.UseAuthorization();
 

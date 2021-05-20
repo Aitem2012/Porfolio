@@ -21,15 +21,13 @@ namespace TechArtProfileProject.Models.Services
             _ctx.SaveChanges();
         }
 
-        public UserProfile CreateUser(string firstname, string lastname, string email, string biography, int userId)
+        public UserProfile CreateUser(string firstname, string lastname, string email)
         {
             var user = new UserProfile
             {
                 FirstName = firstname,
                 LastName = lastname,
                 Email = email,
-                Biography = biography,
-                UserId = userId
             };
 
             return user;
@@ -37,7 +35,7 @@ namespace TechArtProfileProject.Models.Services
 
         public void Delete(UserProfile model)
         {
-            var userToRemove = _ctx.UserProfiles.FirstOrDefault(x => x.UserId == model.UserId);
+            var userToRemove = _ctx.UserProfiles.FirstOrDefault(x => x.Id == model.Id);
             _ctx.UserProfiles.Remove(userToRemove);
             _ctx.SaveChanges();
         }
@@ -47,15 +45,15 @@ namespace TechArtProfileProject.Models.Services
             return _ctx.UserProfiles.Select(x => x).ToList();
         }
 
-        public UserProfile GetUserProfile(int id)
+        public UserProfile GetUserProfile(string id)
         {
-            var userToReturn = _ctx.UserProfiles.FirstOrDefault(x => x.UserId == id);
+            var userToReturn = _ctx.UserProfiles.FirstOrDefault(x => x.Id == id);
             return userToReturn;
         }
 
         public void Update(UserProfile oldModel)
         {
-            var userToUpdate = _ctx.UserProfiles.FirstOrDefault(x => x.UserId == oldModel.UserId);
+            var userToUpdate = _ctx.UserProfiles.FirstOrDefault(x => x.Id == oldModel.Id);
             _ctx.Entry(userToUpdate).CurrentValues.SetValues(oldModel);
             _ctx.SaveChanges();
         }

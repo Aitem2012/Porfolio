@@ -96,3 +96,6 @@ C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\bin\Debug\n
 C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\bin\Debug\netcoreapp3.1\Microsoft.AspNetCore.Identity.EntityFrameworkCore.dll
 C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Core.dll
 C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\bin\Debug\netcoreapp3.1\Microsoft.Extensions.Identity.Stores.dll
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Login.cshtml.g.cs
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\obj\Debug\netcoreapp3.1\Razor\Views\Account\Register.cshtml.g.cs
+C:\Users\hp\source\repos\TechArtProfileProject\TechArtProfileProject\obj\Debug\netcoreapp3.1\Razor\Views\Dashboard\AddService.cshtml.g.cs

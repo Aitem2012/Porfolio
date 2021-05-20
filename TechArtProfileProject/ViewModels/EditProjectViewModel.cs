@@ -11,6 +11,7 @@ namespace TechArtProfileProject.ViewModels
         public string ProjectName { get; set; }
         public string ProjectDescription { get; set; }
         public string UserProfileId { get; set; }
+        public int UserId { get; set; }
         public string ProjectLink { get; set; }
     }
 }

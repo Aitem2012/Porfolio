@@ -8,9 +8,19 @@
 <div class=" d-flex justify-content-center">
 
     <div class="card w-50 col-3 m-2 box-shadow p-4 border-1">
-        <div class="text-center">
-            <a href="#"><img class="card-img-top w-75 rounded" asp-append-version="true" src="~/@Model.UserProfile.Image" alt="image" /></a>
-        </div>
+        @if (Model.UserProfile.Image == null)
+        {
+            <div class="text-center">
+                <a href="#"><img class="card-img-top w-75 rounded" asp-append-version="true" src="/images/avatar.jpg" alt="image" /></a>
+            </div>
+        }
+        else
+        {
+            <div class="text-center">
+                <a href="#"><img class="card-img-top w-75 rounded" asp-append-version="true" src="~/@Model.UserProfile.Image" alt="image" /></a>
+            </div>
+
+        }
         <div class="card-body text-center ">
             <h6 class="text-secondary ">
                 @Model.UserProfile.FirstName @Model.UserProfile.LastName
@@ -42,8 +52,8 @@
 
         </div>
         <div class="row border-dark ">
-            <label for="email" class="font-weight-bold">Email Address</label>
-            <label class="" asp-for="UserProfile.Email">@Model.UserProfile.Email</label>
+            <label asp-for="UserProfile.Email" class="font-weight-bold ">Email Address </label>
+            <label class="" asp-for="UserProfile.Email"> @Model.UserProfile.Email</label>
         </div>
         <div class="row text-justify">
             <div class="border-dark">

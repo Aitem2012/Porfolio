@@ -27,6 +27,8 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                 {
                     Id = table.Column<string>(type: "TEXT", nullable: false),
                     Discriminator = table.Column<string>(type: "TEXT", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: true).
+                            Annotation("Sqlite:Autoincrement", true),
                     FirstName = table.Column<string>(type: "TEXT", maxLength: 15, nullable: true),
                     LastName = table.Column<string>(type: "TEXT", maxLength: 15, nullable: true),
                     Image = table.Column<string>(type: "TEXT", nullable: true),
@@ -185,6 +187,7 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                     Discipline = table.Column<string>(type: "TEXT", nullable: true),
                     StartDate = table.Column<DateTime>(type: "TEXT", nullable: false),
                     GraduationDate = table.Column<DateTime>(type: "TEXT", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
                     UserProfileId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -207,6 +210,7 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                     ProjectDescription = table.Column<string>(type: "TEXT", maxLength: 300, nullable: false),
                     ProjectName = table.Column<string>(type: "TEXT", maxLength: 50, nullable: false),
                     ProjectLink = table.Column<string>(type: "TEXT", nullable: false),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false),
                     UserProfileId = table.Column<string>(type: "TEXT", nullable: true)
                 },
                 constraints: table =>
@@ -228,7 +232,8 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                         .Annotation("Sqlite:Autoincrement", true),
                     ServiceName = table.Column<string>(type: "TEXT", nullable: false),
                     ServiceDescription = table.Column<string>(type: "TEXT", nullable: false),
-                    UserProfileId = table.Column<string>(type: "TEXT", nullable: true)
+                    UserProfileId = table.Column<string>(type: "TEXT", nullable: true),
+                    UserId = table.Column<int>(type: "INTEGER", nullable: false)
                 },
                 constraints: table =>
                 {
@@ -243,123 +248,123 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "9e0444fb-e663-4b8a-88eb-1c9e256a0f48", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "fe13eeab-27cd-4905-b143-942a9eecbfe1", "UserProfile", "ajumokoibrahimtemitope@gmail.com", false, "Ibrahim", "images/aitem.jpg", "Software Developer", "Temitope", false, null, null, null, null, null, false, "5cd4ef9f-1931-4c44-bff6-4d22e5e41b23", false, null });
+                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserId", "UserName" },
+                values: new object[] { "9e0444fb-e663-4b8a-88eb-1c9e256a0f48", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "3f3eeb64-7b23-401b-9bb4-728b67852829", "UserProfile", "ajumokoibrahimtemitope@gmail.com", false, "Ibrahim", "images/aitem.jpg", "Software Developer", "Temitope", false, null, null, null, null, null, false, "bea3a5ce-b0e2-42c0-8840-de8a44105629", false, 1, null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "2438b126-7410-43dc-84f8-f5e6c5c71289", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "03a92561-fc01-4491-b83b-1e904a5531c2", "UserProfile", "ucheeugene@gmail.com", false, "Uche", "images/LinkedIn-Profile-1.jpg", "Software Developer", "Eugene", false, null, null, null, null, null, false, "87d208a8-da25-46d1-a417-40af6180c872", false, null });
+                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserId", "UserName" },
+                values: new object[] { "2438b126-7410-43dc-84f8-f5e6c5c71289", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "39a38606-c842-49ac-bfdc-6ff85d285ee3", "UserProfile", "ucheeugene@gmail.com", false, "Uche", "images/LinkedIn-Profile-1.jpg", "Software Developer", "Eugene", false, null, null, null, null, null, false, "6a9f5b73-ed73-49f2-bf1a-a772a933dc9b", false, 2, null });
 
             migrationBuilder.InsertData(
                 table: "AspNetUsers",
-                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserName" },
-                values: new object[] { "77fe5873-b45c-482e-89f3-decad6c4ed3d", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "7c3e457e-6c11-4c39-bdb5-d401a3d028ce", "UserProfile", "solomon_young@gmail.com", false, "Solomon", "images/image2.jpg", "Software Developer", "Young", false, null, null, null, null, null, false, "3f201549-fef5-44b7-a0e7-a2d8ab3257e4", false, null });
+                columns: new[] { "Id", "AccessFailedCount", "Biography", "ConcurrencyStamp", "Discriminator", "Email", "EmailConfirmed", "FirstName", "Image", "JobTitle", "LastName", "LockoutEnabled", "LockoutEnd", "NormalizedEmail", "NormalizedUserName", "PasswordHash", "PhoneNumber", "PhoneNumberConfirmed", "SecurityStamp", "TwoFactorEnabled", "UserId", "UserName" },
+                values: new object[] { "77fe5873-b45c-482e-89f3-decad6c4ed3d", 0, "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.", "8ab1b5cc-f493-4b78-a5c8-be44e9659804", "UserProfile", "solomon_young@gmail.com", false, "Solomon", "images/image2.jpg", "Software Developer", "Young", false, null, null, null, null, null, false, "cc195842-afb1-448e-8b54-a459a596c9f6", false, 3, null });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 5, "BSc", "Biomedical Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 5, "BSc", "Biomedical Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 6, "HND", "Soil Science", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 6, "HND", "Soil Science", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 4, "MSc", "Software Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "University of Ibadan", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 4, "MSc", "Software Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "University of Ibadan", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 3, "BSC", "Computer Science", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State University", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 3, "BSC", "Computer Science", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State University", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 2, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 1, "HND", "Computer Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 1, "HND", "Computer Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Educations",
-                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserProfileId" },
-                values: new object[] { 2, "OND", "Computer Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "EducationId", "DegreeObtained", "Discipline", "GraduationDate", "SchoolName", "StartDate", "UserId", "UserProfileId" },
+                values: new object[] { 2, "OND", "Computer Engineering", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), "Lagos State Polytechnic", new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified), 1, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 4, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Mobile SMS Sender", "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 4, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Mobile SMS Sender", 2, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 3, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Fire Alarm", "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 3, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Fire Alarm", 2, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 1, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Bank App", "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 1, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Bank App", 1, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 2, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "MVC", "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 2, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "MVC", 1, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 6, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Mobile Metal Detector", "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 6, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Mobile Metal Detector", 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Projects",
-                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserProfileId" },
-                values: new object[] { 5, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Intruder Detection System", "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "ProjectId", "ProjectDescription", "ProjectLink", "ProjectName", "UserId", "UserProfileId" },
+                values: new object[] { 5, "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula", "https://github.com/Aitem2012/BankAccountModel", "Intruder Detection System", 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 3, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Project Management", "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 3, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Project Management", 1, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 9, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 9, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 8, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 8, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 7, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 7, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", 3, "9e0444fb-e663-4b8a-88eb-1c9e256a0f48" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 4, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Mobile development", "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 4, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Mobile development", 2, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 5, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Front-End Development", "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 5, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Front-End Development", 2, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 6, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Mean Stack Engineer", "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 6, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Mean Stack Engineer", 2, "77fe5873-b45c-482e-89f3-decad6c4ed3d" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 1, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 1, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Web development", 1, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.InsertData(
                 table: "Services",
-                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserProfileId" },
-                values: new object[] { 2, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Software Development", "2438b126-7410-43dc-84f8-f5e6c5c71289" });
+                columns: new[] { "ServiceId", "ServiceDescription", "ServiceName", "UserId", "UserProfileId" },
+                values: new object[] { 2, "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.", "Software Development", 1, "2438b126-7410-43dc-84f8-f5e6c5c71289" });
 
             migrationBuilder.CreateIndex(
                 name: "IX_AspNetRoleClaims_RoleId",

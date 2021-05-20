@@ -20,9 +20,9 @@ namespace TechArtProfileProject.Models.Services
            
         }
 
-        public UserProfile CreateUser(string firstname, string lastname, string email, string image, int userId)
+        public UserProfile CreateUser(string firstname, string lastname, string email)
         {
-            return _userProfileRepository.CreateUser(firstname, lastname, email, image, userId);
+            return _userProfileRepository.CreateUser(firstname, lastname, email);
            
         }
 
@@ -36,7 +36,7 @@ namespace TechArtProfileProject.Models.Services
             return _userProfileRepository.GetAllUserProfiles();
         }
 
-        public UserProfile GetUserProfile(int id)
+        public UserProfile GetUserProfile(string id)
         {
             return _userProfileRepository.GetUserProfile(id);
         }

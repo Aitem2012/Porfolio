@@ -20,9 +20,9 @@ namespace TechArtProfileProject.Lib.Core.Services
             _projectRepository.Add(model);
         }
 
-        public Project CreateProject(string projectName, string projectDescription, string projectLink, string userProfileId, int userId)
+        public Project CreateProject(string projectName, string projectDescription, string projectLink)
         {
-            return _projectRepository.CreateProject(projectName, projectDescription, projectLink, userProfileId, userId);
+            return _projectRepository.CreateProject(projectName, projectDescription, projectLink);
         }
 
         public void Delete(Project model)
@@ -30,7 +30,7 @@ namespace TechArtProfileProject.Lib.Core.Services
             _projectRepository.Delete(model);
         }
 
-        public List<Project> GetAllProjects(int id)
+        public List<Project> GetAllProjects(string id)
         {
             return _projectRepository.GetAllProjects(id);
         }

@@ -20,9 +20,9 @@ namespace TechArtProfileProject.Lib.Core.Services
             _userService.Add(model);
         }
 
-        public UserServices CreateProject(string ServiceName, string serviceDescription, int userId)
+        public UserServices CreateProject(string ServiceName, string serviceDescription)
         {
-            return _userService.CreateProject(ServiceName, serviceDescription, userId);
+            return _userService.CreateProject(ServiceName, serviceDescription);
         }
 
         public void Delete(UserServices model)
@@ -30,7 +30,7 @@ namespace TechArtProfileProject.Lib.Core.Services
             _userService.Delete(model);
         }
 
-        public List<UserServices> GetAllServices(int id)
+        public List<UserServices> GetAllServices(string id)
         {
             return _userService.GetAllServices(id);
         }

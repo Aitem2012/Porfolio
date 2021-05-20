@@ -7,8 +7,8 @@ namespace TechArtProfileProject.Lib.Infrastructure.Abstraction
 {
     public interface IUserServiceRepository: ICRUD<UserServices>
     {
-        public UserServices CreateProject(string ServiceName, string serviceDescription, int userId);
+        public UserServices CreateProject(string ServiceName, string serviceDescription);
         public UserServices GetUserService(int id);
-        public List<UserServices> GetAllServices(int id);
+        public List<UserServices> GetAllServices(string id);
     }
 }

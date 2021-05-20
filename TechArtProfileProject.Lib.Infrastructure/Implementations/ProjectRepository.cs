@@ -20,15 +20,15 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.Projects.Add(model);
         }
 
-        public Project CreateProject(string projectName, string projectDescription, string projectLink, string userProfileId, int userId)
+        public Project CreateProject(string projectName, string projectDescription, string projectLink)
         {
             var project = new Project
             {
                 ProjectName = projectName,
                 ProjectDescription = projectDescription,
                 ProjectLink = projectLink,
-                UserProfileId = userProfileId,
-                UserId = userId
+                
+                
             };
             return project;
         }
@@ -40,9 +40,9 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.SaveChanges();
         }
 
-        public List<Project> GetAllProjects(int id)
+        public List<Project> GetAllProjects(string id)
         {
-            return _ctx.Projects.Where(x => x.UserId == id).ToList();
+            return _ctx.Projects.Where(x => x.UserProfileId == id).ToList();
         }
 
         public Project GetProject(int id)

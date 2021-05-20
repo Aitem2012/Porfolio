@@ -1,0 +1,41 @@
+﻿@model ServiceViewModel
+@{
+    ViewData["Title"] = "AddService";
+}
+
+<div class="jumbotron">
+    <h4 class="text-center text-primary">
+        Edit Service
+    </h4>
+</div>
+
+<div class="card col-12 mx-auto">
+    <form method="post" class="row form-group justify-content-center col-12 border-2">
+        <div class="row col-12">
+            <label asp-for="ServiceName" class="col-12"> Service Name</label>
+            <input type="text" name="servicename" class="col-12" asp-for="ServiceName" value="@Model.ServiceName" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="userId" class="col-12" asp-for="UserId" value="@Model.UserId" />
+        </div>
+        <div class="row col-12">
+            <input type="hidden" name="serviceId" class="col-12" asp-for="ServiceId" value="@Model.ServiceId" />
+        </div>
+
+        <div class="row col-12">
+            <label asp-for="ServiceDescription"> Service Description</label>
+            <textarea class="rounded w-200 form-control" rows="3" type="text" name="serviceDescription" asp-for="ServiceDescription">
+                         @Model.ServiceDescription
+            </textarea>
+        </div>
+
+        <div class="form-group">
+            @*<input asp-action="Index"  type="submit" asp-route="@Model.UserProfile.UserProfileId" class="btn btn-outline-primary" name="updateProfile" value="Update profile" />*@
+            <input type="submit" class="btn btn-outline-primary" asp-route="@Model.ServiceId" name="updateservice" value="Add Service" />
+        </div>
+    </form>
+</div>
+
+<div>
+    <a asp-action="Index" asp-route-id="@Model.UserI">Back to Dashboard</a>
+</div>

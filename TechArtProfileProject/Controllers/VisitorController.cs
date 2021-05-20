@@ -31,13 +31,13 @@ namespace TechArtProfileProject.Controllers
             _visitor = new VisitorViewModel();
 
         }
-        public IActionResult Index()
+        public IActionResult Index(string id)
         {
-            var profile = _userProfileService.GetUserProfile(1);
-            _visitor.UserProfile = _userProfileService.GetUserProfile(1);
-            _visitor.GetProjects = _projectService.GetAllProjects(profile.UserId);
-            _visitor.GetEducations = _educationService.GetAllEducation(profile.UserId);
-            _visitor.GetUserServices = _userService.GetAllServices(profile.UserId);
+            var profile = _userProfileService.GetUserProfile(id);
+            _visitor.UserProfile = _userProfileService.GetUserProfile(id);
+            _visitor.GetProjects = _projectService.GetAllProjects(profile.Id);
+            _visitor.GetEducations = _educationService.GetAllEducation(profile.Id);
+            _visitor.GetUserServices = _userService.GetAllServices(profile.Id);
             return View(_visitor);
         }
     }

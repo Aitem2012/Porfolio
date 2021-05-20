@@ -22,5 +22,6 @@ namespace TechArtProfileProject.ViewModels
         public DateTime GraduationDate { get; set; }
 
         public string UserProfileId { get; set; }
+        public int UserId { get; set; }
     }
 }

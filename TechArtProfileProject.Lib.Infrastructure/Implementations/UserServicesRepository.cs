@@ -21,13 +21,13 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.SaveChanges();
         }
 
-        public UserServices CreateProject(string serviceName, string serviceDescription, int userId)
+        public UserServices CreateProject(string serviceName, string serviceDescription)
         {
             var service = new UserServices
             {
                 ServiceDescription = serviceDescription,
                 ServiceName = serviceName,
-                UserId = userId
+                
             };
 
             return service;
@@ -39,9 +39,9 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.Services.Remove(servicesToDelete);
         }
 
-        public List<UserServices> GetAllServices(int id)
+        public List<UserServices> GetAllServices(string id)
         {
-            return _ctx.Services.Where(x => x.UserId == id).ToList();
+            return _ctx.Services.Where(x => x.UserProfileId == id).ToList();
         }
 
         public UserServices GetUserService(int id)

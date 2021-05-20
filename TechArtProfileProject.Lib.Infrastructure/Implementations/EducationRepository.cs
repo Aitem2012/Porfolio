@@ -21,7 +21,7 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.SaveChanges();
         }
 
-        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate, string userProfileId, int userId)
+        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate)
         {
             var service = new Education
             {
@@ -30,8 +30,7 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
                 Discipline = discipline,
                 StartDate = startDate,
                 GraduationDate = endDate,
-                UserProfileId = userProfileId,
-                UserId = userId
+                
             };
 
             return service;
@@ -43,9 +42,9 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _ctx.Educations.Remove(educationToDelete);
         }
 
-        public List<Education> GetAllEducation(int id)
+        public List<Education> GetAllEducation(string id)
         {
-            return _ctx.Educations.Where(x => x.UserId == id).ToList();
+            return _ctx.Educations.Where(x => x.UserProfileId == id).ToList();
         }
 
         public Education GetEducation(int id)

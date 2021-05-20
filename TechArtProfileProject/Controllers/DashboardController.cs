@@ -26,6 +26,8 @@ namespace TechArtProfileProject.Controllers
         private readonly EditProjectViewModel _projectViewModel;
         private readonly EducationViewModel _educationViewModel;
 
+        private int _dummy { get; set; }
+
         public DashboardController(ILogger<DashboardController> logger, IUserProfileService userProfileService, 
             IProjectService projectService, IEducationsService educationService, IUserServicesService userServices)
         {
@@ -42,17 +44,19 @@ namespace TechArtProfileProject.Controllers
         }
         //[Authorize]
         [HttpGet]
-        public IActionResult Index(int Id)
+        public IActionResult Index(string Id)
         {
             var profile = _userProfileService.GetUserProfile(Id);
+           
             _profile.UserProfile = _userProfileService.GetUserProfile(Id);
-            _profile.GetProjects = _projectService.GetAllProjects(profile.UserId);
-            _profile.GetEducations = _educationService.GetAllEducation(profile.UserId);
-            _profile.GetUserServices = _userService.GetAllServices(profile.UserId);
+            
+            _profile.GetProjects = _projectService.GetAllProjects(profile.Id);
+            _profile.GetEducations = _educationService.GetAllEducation(profile.Id);
+            _profile.GetUserServices = _userService.GetAllServices(profile.Id);
             return View(_profile);
         }
 
-        public IActionResult Edit(int id)
+        public IActionResult Edit(string id)
         {
             var user = _userProfileService.GetUserProfile(id);
             _singleUser.FirstName = user.FirstName;
@@ -61,18 +65,19 @@ namespace TechArtProfileProject.Controllers
             _singleUser.Biography = user.Biography;
             _singleUser.Image = user.Image;
             _singleUser.JobTitle = user.JobTitle;
-            _singleUser.UserProfileId = user.UserId;
+            _singleUser.UserProfileId = user.Id;
+            _singleUser.UserId = user.UserId;
             return View(_singleUser);
         }
 
         [HttpPost]
-        public IActionResult Edit(UserProfile userProfile, int id)
+        public IActionResult Edit(UserProfile userProfile)
         {
-            var oldModel = _userProfileService.GetUserProfile(userProfile.UserId);
-            
+            var oldModel = _userProfileService.GetUserProfile(userProfile.Id);
+            //userProfile.Id = oldModel.Id;
             _userProfileService.Update(userProfile);
 
-            var myProfile =_userProfileService.GetUserProfile(userProfile.UserId);
+            var myProfile =_userProfileService.GetUserProfile(userProfile.Id);
 
             var myUser = new UserProfileViewModel
             {
@@ -81,7 +86,8 @@ namespace TechArtProfileProject.Controllers
                 Email = myProfile.Email,
                 Biography = myProfile.Biography,
                 Image = myProfile.Image,
-                //UserProfileId = myProfile.UserProfileId,
+                UserProfileId = myProfile.Id,
+                UserId = myProfile.UserId,
                 JobTitle = myProfile.JobTitle                
             };
 
@@ -98,11 +104,52 @@ namespace TechArtProfileProject.Controllers
                 ServiceDescription = userServices.ServiceDescription,
                 ServiceId = userServices.ServiceId,
                 UserId = userServices.UserProfileId,
-                ServiceName = userServices.ServiceName
+                ServiceName = userServices.ServiceName,
+                UserI = userServices.UserId
             };
 
             return View(service);
         }
+
+        [HttpGet]
+        public IActionResult AddService()
+        {
+            var myService = _userService.CreateProject("", "");
+            var service = new ServiceViewModel
+            {
+                ServiceDescription = myService.ServiceDescription,
+                ServiceId = myService.ServiceId,
+                
+                ServiceName = myService.ServiceName,
+                UserI = myService.UserId
+            };
+
+            return View(service);
+
+            
+        }
+
+        [HttpPost]
+        public IActionResult AddService(ServiceViewModel model, string id)
+        {
+            
+            var user = _userProfileService.GetUserProfile(model.UserId);
+            var service = new ServiceViewModel
+            {
+                ServiceDescription = model.ServiceDescription,
+                ServiceId = model.ServiceId,
+                UserId = user.Id,
+                ServiceName = model.ServiceName,
+                
+            };
+
+            return View(service);
+
+
+        }
+
+
+
         [HttpPost]
         public IActionResult EditService(UserServices userService, int id)
          {
@@ -129,6 +176,7 @@ namespace TechArtProfileProject.Controllers
             _projectViewModel.ProjectDescription = project.ProjectDescription;
             _projectViewModel.ProjectLink = project.ProjectLink;
             _projectViewModel.UserProfileId = project.UserProfileId;
+            _projectViewModel.UserId = project.UserId;
             return View(_projectViewModel);
         }
 
@@ -146,6 +194,7 @@ namespace TechArtProfileProject.Controllers
             _projectViewModel.ProjectDescription = projec.ProjectDescription;
             _projectViewModel.ProjectLink = projec.ProjectLink;
             _projectViewModel.UserProfileId = projec.UserProfileId;
+            _projectViewModel.UserId = projec.UserId;
             return View(_projectViewModel);
         }
 
@@ -159,6 +208,7 @@ namespace TechArtProfileProject.Controllers
             _educationViewModel.GraduationDate = education.GraduationDate;
             _educationViewModel.SchoolName = education.SchoolName;
             _educationViewModel.UserProfileId = education.UserProfileId;
+            _educationViewModel.UserId = education.UserId;
             return View(_educationViewModel);
         }
 
@@ -178,7 +228,7 @@ namespace TechArtProfileProject.Controllers
             _educationViewModel.GraduationDate = edu.GraduationDate;
             _educationViewModel.SchoolName = edu.SchoolName;
             _educationViewModel.UserProfileId = edu.UserProfileId;
-
+            _educationViewModel.UserId = edu.UserId;
             return View(_educationViewModel);
         }
     }

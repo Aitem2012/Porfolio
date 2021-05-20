@@ -1,0 +1,47 @@
+﻿@model LoginViewModel
+@{
+    ViewData["Title"] = "Login";
+}
+@section Scripts{
+
+    <script src="~/lib/jquery-validation/dist/jquery.validate.js"></script>
+    <script src="~/lib/jquery-validation-unobtrusive/jquery.validate.unobtrusive.js"></script>
+}
+
+<div class="jumbotron bg-white text-center font-weight-bolder text-50 text-primary"><h4>Login</h4></div>
+
+<div class="row col-6 mx-auto">
+    <div class="col-md-12">
+        <div class="card border-1 m-2 col-12 box-shadow p-4 ">
+            <form action="" method="post">
+                <div asp-validation-summary="ModelOnly"></div>
+                <div class="form-group">
+                    <label asp-for="Username" class="col-12"> Username</label>
+                    <input asp-for="Username" class="col-12" />
+                    <span asp-validation-for="Username" class="text-warning"></span>
+
+                </div>
+                <div class="form-group">
+                    <label asp-for="Password" class="col-12"> Password</label>
+                    <input asp-for="Password" class="col-12" type="password" />
+                    <span asp-validation-for="Password" class="text-warning"></span>
+                </div>
+
+                <div class="form-group">
+                    <div class="form-check">
+                        <input asp-for="RememberMe" class="form-check-input" type="checkbox" />
+                        <label asp-for="RememberMe" class="form-check-label"> Remember Me?</label>
+                    </div>
+                    <span asp-validation-for="RememberMe" class="text-warning"></span>
+                </div>
+                <div class="form-group">
+                    Click <a asp-action="Register" asp-controller="Account">Here</a> to register
+                </div>
+                <div class="form-group">
+                    <input type="submit" name="Login" value="Login" class="btn btn-primary w-50 col-6 offset-3" />
+                </div>
+
+            </form>
+        </div>
+    </div>
+</div>

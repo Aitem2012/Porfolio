@@ -7,25 +7,46 @@
     Portfolio
 </div>
 
-<div class="container">
-    <div class="d-flex justify-content-center pt-2">
+<div class="">
+    <div class="d-flex justify-content-center pt-2 flex-wrap">
         @foreach (var profile in Model.Profiles)
         {
 
-            <div class="card border-0 w-50 m-2 col-4 box-shadow p-4 ">
+        <div class="card border-0 w-50 m-2 col-4 box-shadow p-4 ">
 
-                <a href="#"><img class="card-img-top" asp-append-version="true" src="@profile.Image" alt="image" /></a>
-                <div class="card-body text-center ">
-                    <h6 class="text-uppercase text-primary">
-                        @profile.FirstName @profile.LastName
-                    </h6>
-                    <p class="text-muted card-text" style=" font-size:small">
-                       Hello, my name is @profile.FirstName @profile.LastName and I am fun to be with
-                    </p>
-                    <a class="btn btn-outline-primary w-75" asp-controller="Dashboard" asp-action="Index" id="" asp-route-id="@profile.UserId">See More</a>
+            @if (profile.Image == null)
+            {
+                <div class="text-center">
+                    <a href="#"><img class="card-img-top w-75 rounded" asp-append-version="true" src="~/images/avatar.jpg" alt="image" /></a>
+                </div>
+            }
+            else
+            {
+                <div class="text-center">
+                    <a href="#"><img class="card-img-top w-75 rounded" asp-append-version="true" src="~/@profile.Image" alt="image" /></a>
                 </div>
 
+            }
+            <div class="card-body text-center ">
+                <h6 class="text-uppercase text-primary">
+                    @profile.FirstName @profile.LastName
+                </h6>
+                <p class="text-muted card-text font-weight-bold" style="font-size:small">
+                     @profile.JobTitle
+                </p>
+                @if (!User.Identity.IsAuthenticated)
+                {
+                    <a class="btn btn-outline-primary w-75" asp-controller="Dashboard" asp-action="Index" id="" asp-route-id="@profile.Id">See More</a>
+
+                }
+                else
+                {
+
+                    <a class="btn btn-outline-primary w-75" asp-controller="Visitor" asp-action="Index" id="" asp-route-id="@profile.Id">See More</a>
+                }
             </div>
-          }
+
+        </div>
+        }
     </div>
 </div>

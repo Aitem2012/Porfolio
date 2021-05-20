@@ -21,9 +21,9 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _education.Add(model);
         }
 
-        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate, string userProfileId, int userId)
+        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate)
         {
-            return _education.CreateEducation(degreeObtained, schoolName, discipline, startDate, endDate, userProfileId, userId);
+            return _education.CreateEducation(degreeObtained, schoolName, discipline, startDate, endDate);
         }
 
         public void Delete(Education model)
@@ -31,7 +31,7 @@ namespace TechArtProfileProject.Lib.Infrastructure.Implementations
             _education.Delete(model);
         }
 
-        public List<Education> GetAllEducation(int id)
+        public List<Education> GetAllEducation(string id)
         {
             return _education.GetAllEducation(id);
         }

@@ -8,8 +8,8 @@ namespace TechArtProfileProject.Lib.Core.Abstraction
 {
     public interface IProjectService : ICRUDService<Project>
     {
-        public Project CreateProject(string projectName, string projectDescription, string projectLink, string userProfileId, int userId);
+        public Project CreateProject(string projectName, string projectDescription, string projectLink);
         public Project GetProject(int id);
-        public List<Project> GetAllProjects(int id);
+        public List<Project> GetAllProjects(string id);
     }
 }

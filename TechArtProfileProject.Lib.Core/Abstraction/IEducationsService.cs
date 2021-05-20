@@ -9,8 +9,8 @@ namespace TechArtProfileProject.Lib.Infrastructure.Abstraction
 {
     public interface IEducationsService : ICRUDService<Education>
     {
-        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate, string userProfileId, int userId);
-        public List<Education> GetAllEducation(int id);
+        public Education CreateEducation(string degreeObtained, string schoolName, string discipline, DateTime startDate, DateTime endDate);
+        public List<Education> GetAllEducation(string id);
         public Education GetEducation(int id);
     }
 }

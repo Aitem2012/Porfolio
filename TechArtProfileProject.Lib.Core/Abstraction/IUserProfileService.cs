@@ -8,8 +8,8 @@ namespace TechArtProfileProject.Lib.Core.Abstraction
 {
     public interface IUserProfileService : ICRUDService<UserProfile>
     {
-        public UserProfile CreateUser(string firstname, string lastname, string email, string image, int userId);
-        public UserProfile GetUserProfile(int email);
+        public UserProfile CreateUser(string firstname, string lastname, string email);
+        public UserProfile GetUserProfile(string email);
         public List<UserProfile> GetAllUserProfiles();
     }
 }

@@ -24,6 +24,7 @@ namespace TechArtProfileProject.Controllers
             _allUserViewModel = new AllUserProfileViewModel();
         }
 
+        
         public IActionResult Index()
         {
             
