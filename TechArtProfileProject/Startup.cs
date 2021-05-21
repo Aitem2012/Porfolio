@@ -61,7 +61,7 @@ namespace TechArtProfileProject
             {
                 app.UseDeveloperExceptionPage();
             }
-            else
+            else if (env.IsProduction())
             {
                 app.UseExceptionHandler("/Home/Error");
             }

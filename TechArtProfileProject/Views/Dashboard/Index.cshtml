@@ -149,6 +149,10 @@
     {
     <div class="card border-1 m-2  box-shadow p-4 ">
         <div class="card-body m-2">
+            <div class="text-center">
+                <i class="fas fa-graduation-cap text-primary fa-2x"></i>
+                
+            </div>
             <div class="btext-center">
                 @project.SchoolName
             </div>
@@ -160,11 +164,11 @@
 
             </div>
             <div>
-                @project.StartDate - @project.GraduationDate
+                @project.StartDate.Year - @project.GraduationDate.Year
             </div>
         </div>
         <div class="d-flex flex-row-reverse fa-pull-right">
-            <a class="btn" type="button" asp-controller="Dashboard" asp-action="EditEducation" asp-route-id="@project.EducationId"> Edit Project </a>
+            <a class="btn" type="button" asp-controller="Dashboard" asp-action="EditEducation" asp-route-id="@project.EducationId"> Edit Education </a>
         </div>
 
     </div>

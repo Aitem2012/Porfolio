@@ -74,7 +74,7 @@
     <div class="d-flex justify-content-center">
         @foreach (var project in Model.GetUserServices)
         {
-            <div class="card border-1 m-2 box-shadow p-4 ">
+            <div class="card border-1 m-2 box-shadow p-4 " style="width: 400px">
                 <div class="card-body">
                     <div class="text-center font-weight-bold">
                         @project.ServiceName
@@ -131,6 +131,10 @@
     {
         <div class="card border-1 m-2  box-shadow p-4 ">
             <div class="card-body m-2">
+                <div class="text-center">
+                    <i class="fas fa-graduation-cap text-primary fa-2x"></i>
+
+                </div>
                 <div class="btext-center">
                     @project.SchoolName
                 </div>
@@ -142,7 +146,7 @@
 
                 </div>
                 <div>
-                    @project.StartDate - @project.GraduationDate
+                    @project.StartDate.Year - @project.GraduationDate.Year
                 </div>
             </div>
             

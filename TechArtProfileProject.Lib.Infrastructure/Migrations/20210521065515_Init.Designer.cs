@@ -9,8 +9,8 @@ using TechArtProfileProject.Lib.Infrastructure;
 namespace TechArtProfileProject.Lib.Infrastructure.Migrations
 {
     [DbContext(typeof(UserProfileDbContext))]
-    [Migration("20210519201414_init")]
-    partial class init
+    [Migration("20210521065515_Init")]
+    partial class Init
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
@@ -300,50 +300,6 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                             StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
                             UserId = 1,
                             UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
-                            EducationId = 3,
-                            DegreeObtained = "BSC",
-                            Discipline = "Computer Science",
-                            GraduationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SchoolName = "Lagos State University",
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            EducationId = 4,
-                            DegreeObtained = "MSc",
-                            Discipline = "Software Engineering",
-                            GraduationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SchoolName = "University of Ibadan",
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 2,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            EducationId = 5,
-                            DegreeObtained = "BSc",
-                            Discipline = "Biomedical Engineering",
-                            GraduationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SchoolName = "Lagos State Polytechnic",
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 3,
-                            UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
-                        },
-                        new
-                        {
-                            EducationId = 6,
-                            DegreeObtained = "HND",
-                            Discipline = "Soil Science",
-                            GraduationDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            SchoolName = "Lagos State Polytechnic",
-                            StartDate = new DateTime(1, 1, 1, 0, 0, 0, 0, DateTimeKind.Unspecified),
-                            UserId = 3,
-                            UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
                         });
                 });
 
@@ -376,56 +332,8 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            ServiceId = 1,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Web development",
-                            UserId = 1,
-                            UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
-                            ServiceId = 2,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Software Development",
-                            UserId = 1,
-                            UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
-                            ServiceId = 3,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Project Management",
-                            UserId = 1,
-                            UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
-                            ServiceId = 4,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Mobile development",
-                            UserId = 2,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            ServiceId = 5,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Front-End Development",
-                            UserId = 2,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            ServiceId = 6,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Mean Stack Engineer",
-                            UserId = 2,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
                             ServiceId = 7,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
+                            ServiceDescription = "Build and manage responsive Design, install and test a website's user interface elements. Focus on a website's functionality and the look of a website. Develop ideas for a new website or come up with ways to renovate an existing website.",
                             ServiceName = "Web development",
                             UserId = 3,
                             UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
@@ -433,16 +341,16 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                         new
                         {
                             ServiceId = 8,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Web development",
+                            ServiceDescription = "Create functional and aesthetically pleasing apps which meet the needs of customer. Create apps on iOS and Android devices and maintain.",
+                            ServiceName = "Mobile development",
                             UserId = 3,
                             UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
                         },
                         new
                         {
                             ServiceId = 9,
-                            ServiceDescription = "Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Proin pharetra nonummy pede. Mauris et orci.",
-                            ServiceName = "Web development",
+                            ServiceDescription = "Offers Project Management service using agile methodologies to startups and companies on freelance base and contract base.",
+                            ServiceName = "Project Management",
                             UserId = 3,
                             UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
                         });
@@ -483,55 +391,19 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                     b.HasData(
                         new
                         {
-                            ProjectId = 1,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
-                            ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "Bank App",
-                            UserId = 1,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            ProjectId = 2,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
-                            ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "MVC",
-                            UserId = 1,
-                            UserProfileId = "77fe5873-b45c-482e-89f3-decad6c4ed3d"
-                        },
-                        new
-                        {
-                            ProjectId = 3,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
-                            ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "Fire Alarm",
-                            UserId = 2,
-                            UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
-                            ProjectId = 4,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
-                            ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "Mobile SMS Sender",
-                            UserId = 2,
-                            UserProfileId = "2438b126-7410-43dc-84f8-f5e6c5c71289"
-                        },
-                        new
-                        {
                             ProjectId = 5,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
+                            ProjectDescription = "The application is a windows form application to carry out banking operations. The operations available for this project includes account opening, cash deposit, cash withdrawal, funds transfer between accounts and the application is capable of generating statement of accounts for every account.",
                             ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "Intruder Detection System",
+                            ProjectName = "Windows Forms Bank Application",
                             UserId = 3,
                             UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
                         },
                         new
                         {
                             ProjectId = 6,
-                            ProjectDescription = "Aenean nec lorem. In porttitor. Donec laoreet nonummy augue. Suspendisse dui purus, scelerisque at, vulputate vitae, pretium mattis, nunc. Mauris eget neque at sem venenatis eleifend. Ut nonummy. Fusce aliquet pede non pede. Suspendisse dapibus lorem pellentesque magna. Integer nulla. Donec blandit feugiat ligula",
-                            ProjectLink = "https://github.com/Aitem2012/BankAccountModel",
-                            ProjectName = "Mobile Metal Detector",
+                            ProjectDescription = "Using the ASP.NET MVC. This project was used to build a simple portfolio to showcase my details and professional qualifications as well as my educational background. The Application is published on heroku but the link to the project file can be found in the link below.",
+                            ProjectLink = "https://github.com/Aitem2012/Porfolio",
+                            ProjectName = "Personal Portfolio Using ASP.NET MVC",
                             UserId = 3,
                             UserProfileId = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48"
                         });
@@ -573,55 +445,19 @@ namespace TechArtProfileProject.Lib.Infrastructure.Migrations
                         {
                             Id = "9e0444fb-e663-4b8a-88eb-1c9e256a0f48",
                             AccessFailedCount = 0,
-                            ConcurrencyStamp = "3f3eeb64-7b23-401b-9bb4-728b67852829",
+                            ConcurrencyStamp = "3ea252df-ca26-4a2b-8667-37b4ab66446e",
                             Email = "ajumokoibrahimtemitope@gmail.com",
                             EmailConfirmed = false,
                             LockoutEnabled = false,
                             PhoneNumberConfirmed = false,
-                            SecurityStamp = "bea3a5ce-b0e2-42c0-8840-de8a44105629",
+                            SecurityStamp = "a90c29f6-08e4-4c02-9eb9-c1d012cea225",
                             TwoFactorEnabled = false,
-                            Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
+                            Biography = "Experienced C# developer with extensive DotNet experience looking to continue to develop my skill set on the back-end at a company driven to addressing the climate crisis. Information Technology Engineer with strong leadership and relationship-building skills. I have solid experience managing all levels of large-scale projects, including budgeting and administration. Highly ambitious Information Security Engineer with background in data processing, data management and Security. A network administrator enthusiast, including back-up, security management, e-mail systems and applications support. Experienced in project management",
                             FirstName = "Ibrahim",
                             Image = "images/aitem.jpg",
                             JobTitle = "Software Developer",
                             LastName = "Temitope",
                             UserId = 1
-                        },
-                        new
-                        {
-                            Id = "2438b126-7410-43dc-84f8-f5e6c5c71289",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "39a38606-c842-49ac-bfdc-6ff85d285ee3",
-                            Email = "ucheeugene@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "6a9f5b73-ed73-49f2-bf1a-a772a933dc9b",
-                            TwoFactorEnabled = false,
-                            Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            FirstName = "Uche",
-                            Image = "images/LinkedIn-Profile-1.jpg",
-                            JobTitle = "Software Developer",
-                            LastName = "Eugene",
-                            UserId = 2
-                        },
-                        new
-                        {
-                            Id = "77fe5873-b45c-482e-89f3-decad6c4ed3d",
-                            AccessFailedCount = 0,
-                            ConcurrencyStamp = "8ab1b5cc-f493-4b78-a5c8-be44e9659804",
-                            Email = "solomon_young@gmail.com",
-                            EmailConfirmed = false,
-                            LockoutEnabled = false,
-                            PhoneNumberConfirmed = false,
-                            SecurityStamp = "cc195842-afb1-448e-8b54-a459a596c9f6",
-                            TwoFactorEnabled = false,
-                            Biography = "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.",
-                            FirstName = "Solomon",
-                            Image = "images/image2.jpg",
-                            JobTitle = "Software Developer",
-                            LastName = "Young",
-                            UserId = 3
                         });
                 });
 
